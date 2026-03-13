@@ -1,0 +1,49 @@
+{
+    "name": "openclaw-agent-dns",
+    "version": "1.0.0",
+    "description": "OpenClaw + Agent DNS Settlement Integration with ELSA X402 Micropayment Protocol (heyelsa.ai)",
+    "main": "agent-dns-openclaw-integration.js",
+    "scripts": {
+        "start": "node agent-dns-openclaw-integration-fixed.js",
+        "buyer": "node agent-dns-openclaw-integration-fixed.js --agent-type buyer --port 8080",
+        "seller": "node agent-dns-openclaw-integration-fixed.js --agent-type seller --port 8081",
+        "dev": "node agent-dns-openclaw-integration-fixed.js --agent-type buyer --port 8080",
+        "test": "node test-openclaw.js",
+        "test:integration": "node test/integration.test.js",
+        "cli": "node cli.js"
+    },
+    "keywords": [
+        "openclaw",
+        "agent-dns",
+        "elsa",
+        "x402",
+        "heyelsa",
+        "micropayments",
+        "defi",
+        "blockchain",
+        "base",
+        "autonomous-agents",
+        "trading-bot",
+        "p2p-mesh",
+        "http-402"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.7.0",
+        "dotenv": "^16.4.0",
+        "ethers": "^6.13.0",
+        "express": "^4.21.0",
+        "pino": "^10.3.1",
+        "viem": "^2.47.0",
+        "x402-axios": "^1.1.0",
+        "yargs": "^17.7.2",
+        "zod": "^4.3.6"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

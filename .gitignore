@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains private keys!)
+.env
+
+# Logs
+*.log
+trades.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
+
+# Coverage
+coverage/

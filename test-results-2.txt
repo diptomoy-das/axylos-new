@@ -1,0 +1,34 @@
+
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ   ≡ƒº¬ OpenClaw + Agent DNS Integration Tests               Γòæ
+Γòæ   ELSA X402 heyelsa.ai Integration Verification           Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+   Target: http://localhost:8080
+
+   ≡ƒƒó Server connection verified
+
+   Γ£à GET /health returns healthy status
+   Γ£à GET /health includes ELSA heyelsa.ai config
+   Γ£à GET /health includes uptime
+   Γ£à GET /budget/status returns cost structure
+   Γ£à GET /budget/status includes session stats
+   Γ£à GET /budget/status includes heyelsa.ai dashboard URL
+   Γ£à GET /trades returns trade history
+   Γ£à GET /trades count matches array length
+   Γ£à POST /trade/propose rejects empty body
+   Γ£à POST /trade/execute rejects empty body
+   Γ£à POST /quote/swap rejects empty body
+   Γ£à POST /openclaw/command rejects empty body
+   Γ£à POST /openclaw/command handles unknown commands gracefully
+   Γ£à POST /openclaw/command routes price queries
+   Γ£à POST /openclaw/command routes portfolio queries
+   Γ£à POST /openclaw/command routes yield queries
+   Γ£à POST /openclaw/command routes swap queries
+   Γ£à GET /agent/status returns agent info with session stats
+
+   ≡ƒÄë All tests passed!
+   Γ£à Passed: 18
+   Γ¥î Failed: 0
+   ≡ƒôè Total:  18
+
