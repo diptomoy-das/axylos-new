@@ -24,7 +24,7 @@ export default function LiveDashboard() {
   const wethPrice = useApi(wethFetcher, 10000);
   const usdcPrice = useApi(usdcFetcher, 10000);
 
-  const isOnline = !health.error && health.data?.status === 'healthy';
+  const isOnline = !health.loading && !health.error && health.data?.status === 'healthy';
 
   const formatPrice = (priceData) => {
     if (!priceData || priceData.error) return '—';
@@ -42,7 +42,7 @@ export default function LiveDashboard() {
     return `${Math.floor(seconds / 3600)}h ${Math.floor((seconds % 3600) / 60)}m`;
   };
 
-  if (!isOnline && !health.loading) {
+  if (!isOnline) {
     return (
       <section className="dashboard" id="dashboard">
         <div className="dashboard-inner">
@@ -53,12 +53,16 @@ export default function LiveDashboard() {
             </h2>
           </div>
           <div className="glass-card dashboard-offline">
-            <div className="dashboard-offline-icon">📡</div>
-            <h3 className="dashboard-offline-title">Backend Offline</h3>
+            <div className="dashboard-offline-icon">{health.loading ? '⏳' : '📡'}</div>
+            <h3 className="dashboard-offline-title">
+              {health.loading ? 'Connecting...' : 'Backend Offline'}
+            </h3>
             <p className="dashboard-offline-desc">
-              The Axylos agent server is not running. Start it to see live data here.
+              {health.loading
+                ? 'Trying to reach the Axylos agent server...'
+                : 'The Axylos agent server is not running. Start it to see live data here.'}
             </p>
-            <div className="dashboard-offline-cmd">npm run dev</div>
+            {!health.loading && <div className="dashboard-offline-cmd">npm run dev</div>}
           </div>
         </div>
       </section>
