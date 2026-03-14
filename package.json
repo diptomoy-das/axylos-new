@@ -10,7 +10,9 @@
         "dev": "node agent-dns-openclaw-integration-fixed.js --agent-type buyer --port 8080",
         "test": "node test-openclaw.js",
         "test:integration": "node test/integration.test.js",
-        "cli": "node cli.js"
+        "cli": "node cli.js",
+        "frontend:install": "cd frontend && npm install",
+        "frontend:dev": "cd frontend && npm run dev"
     },
     "keywords": [
         "openclaw",
