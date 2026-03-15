@@ -1,0 +1,218 @@
+.app-container {
+  width: 100%;
+  position: relative;
+  background-color: var(--primary-red);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(225, 6, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 16px 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-brand {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-white);
+}
+
+.nav-cta {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  border-color: var(--text-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollytelling Container */
+.scroll-container {
+  position: relative;
+  height: 500vh; /* 5x viewport height to allow for long scrolling */
+  width: 100%;
+}
+
+.sticky-canvas-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Story Beats */
+.story-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* Let clicks pass through to canvas/scroll if needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.story-beat {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10vw;
+}
+
+.beat-1 {
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  padding-bottom: 15vh;
+}
+
+.beat-2 {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.beat-3 {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.beat-4 {
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.headline-huge {
+  font-size: clamp(80px, 12vw, 200px);
+  line-height: 0.85;
+  margin-bottom: 16px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Add depth against the red/image */
+}
+
+.subheadline {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.desc-text {
+  font-size: clamp(24px, 4vw, 48px);
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  max-width: 600px;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.peak-list {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.peak-list li {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.cta-group {
+  display: flex;
+  gap: 24px;
+  margin-top: 48px;
+  pointer-events: auto; /* Re-enable clicks for buttons */
+}
+
+/* Loading Screen */
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: var(--primary-red);
+  color: var(--text-white);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar-container {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--text-white);
+  transition: width 0.1s linear;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 24px;
+  }
+  .nav-links {
+    display: none; /* simple mobile nav */
+  }
+  .cta-group {
+    flex-direction: column;
+  }
+}

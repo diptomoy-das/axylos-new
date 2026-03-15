@@ -12,8 +12,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-inner">
-        <a href="#" className="navbar-logo">
-          <span className="navbar-logo-icon">⚡</span>
+        <a href="#" className="navbar-logo" style={{ color: '#ffffff' }}>
           Axylos
         </a>
 
@@ -29,12 +28,12 @@ export default function Navbar() {
             href="https://x402.heyelsa.ai/docs"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-secondary"
+            className="btn btn-white"
             style={{ padding: '0.5rem 1.1rem', fontSize: '0.82rem' }}
           >
             Docs
           </a>
-          <a href="#get-started" className="btn btn-primary" style={{ padding: '0.5rem 1.1rem', fontSize: '0.82rem' }}>
+          <a href="#get-started" className="btn btn-black" style={{ padding: '0.5rem 1.1rem', fontSize: '0.82rem' }}>
             Get Started
           </a>
         </div>

@@ -1,25 +1,13 @@
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import LiveDashboard from './components/LiveDashboard';
-import Architecture from './components/Architecture';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
+import MountainScroll from './components/MountainScroll';
 
 export default function App() {
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <LiveDashboard />
-        <Architecture />
-        <CTA />
+        <MountainScroll />
       </main>
-      <Footer />
     </>
   );
 }
